@@ -30,8 +30,7 @@ const ListTodo = () => {
   useEffect(() => {
     getTodos();
   }, []);
-
-  console.log(todos);
+  
   return (
     <Fragment>
       {" "}
