@@ -8,7 +8,7 @@ const ListTodo = () => {
   const deleteTodo = async (id) => {
     try {
       // eslint-disable-next-line no-unused-vars
-      const deleteTodo = await fetch(`http://localhost:4200/todos/${id}`, {
+      const deleteTodo = await fetch(`/todos/${id}`, {
         method: "DELETE",
       });
       setTodos(todos.filter((todo) => todo.todo_id !== id));
@@ -19,7 +19,7 @@ const ListTodo = () => {
 
   const getTodos = async () => {
     try {
-      const response = await fetch("http://localhost:4200/todos");
+      const response = await fetch("/todos");
       const jsonData = await response.json();
       setTodos(jsonData);
     } catch (err) {
