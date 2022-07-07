@@ -8,7 +8,7 @@ const ListTodo = () => {
   const deleteTodo = async (id) => {
     try {
       // eslint-disable-next-line no-unused-vars
-      const deleteTodo = await fetch(`https://todo-app-deploy-joe.herokuapp.com/todos/${id}`, {
+      const deleteTodo = await fetch(`/todos/${id}`, {
         method: "DELETE",
       });
       setTodos(todos.filter((todo) => todo.todo_id !== id));
@@ -19,7 +19,7 @@ const ListTodo = () => {
 
   const getTodos = async () => {
     try {
-      const response = await fetch("https://todo-app-deploy-joe.herokuapp.com/todos");
+      const response = await fetch("/todos");
       const jsonData = await response.json();
       setTodos(jsonData);
     } catch (err) {
@@ -30,7 +30,8 @@ const ListTodo = () => {
   useEffect(() => {
     getTodos();
   }, []);
-  
+
+  console.log(todos);
   return (
     <Fragment>
       {" "}
