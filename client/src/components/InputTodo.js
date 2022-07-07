@@ -8,7 +8,7 @@ const InputTodo = () => {
     try {
       const body = { description };
       // eslint-disable-next-line no-unused-vars
-      const response = await fetch("/todos", {
+      const response = await fetch("https://todo-app-deploy-joe.herokuapp.com/todos", {
         method: "Post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),

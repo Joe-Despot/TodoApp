@@ -13,7 +13,7 @@ const EditTodo = ({ todo }) => {
 
       // eslint-disable-next-line no-unused-vars
       const response = await fetch(
-        `/todos/${todo.todo_id}`,
+        `https://todo-app-deploy-joe.herokuapp.com/todos/${todo.todo_id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
