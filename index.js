@@ -2,12 +2,15 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const pool = require("./db");
+const PORT = process.env.PORT || 4200;
 
 //middleware
 app.use(cors());
 app.use(express.json());
 
-//routes
+if(process.env.NODE_ENV === "production"){
+  
+}
 
 //create Todo
 app.post("/todos", async (req, res) => {
@@ -71,6 +74,6 @@ app.delete("/todos/:id", async(req, res)=>{
 })
 
 
-app.listen(4200, () => {
-  console.log("server started on port 4200");
+app.listen(PORT, () => {
+  console.log("server started on port ${PORT}");
 });
